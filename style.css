@@ -1,0 +1,347 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+a img {
+  width: 54px;
+  height: 54px;
+}
+
+h2 img {
+  width: 54px;
+  height: 54px;
+}
+
+main {
+  display: flex;
+  width: 90%;
+  justify-content: center;
+}
+
+.nom {
+  font-size: 48px;
+}
+
+
+.img-profile {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-image: url('img/Photo\ profile\ pro.jpeg');
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.6s ease-in, transform 0.3s ease-out;
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.img-profile:hover {
+  transform: rotateY(180deg); 
+}
+
+footer .contact-actions a img {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+footer .contact-actions a:hover img {
+  transform: scale(1.2);
+  opacity: 0.9;
+}
+
+#contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.contact-actions {
+  display: flex;
+  gap: 20px;
+}
+
+#mail-logo {
+  width: 54px;
+  height: 54px;
+}
+#linkedin-logo {
+  width: 64px;
+  height: 64px;
+}
+#github-logo {
+  width: 4px;
+  height: 114px;
+}
+
+#popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #FFF8EC;
+  border: 1px solid #ccc;
+  padding: 20px;
+  z-index: 1000;
+  width: 50%; 
+  border-radius: 10px;
+  display: flex;
+  gap: 15px;
+}
+
+#popup a {
+  text-decoration: none;
+  font-family:'Montserrat', sans-serif; 
+  color: black;
+  border: 2px solid black;
+  border-radius: 8px;
+  padding: 5px;
+}
+
+#popup a:hover {
+  color: #FFF8EC;
+  background-color: black;
+  cursor: pointer;
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+.split-text-container {
+  display: flex;
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: black;
+  overflow: hidden;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  gap: 20px; 
+}
+
+.text-part {
+  display: inline-block;
+  position: relative;
+  transform: translateX(0);
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+.text-part.left {
+  transform: translateX(-200%);
+  animation-name: slide-in-left;
+}
+
+.text-part.right {
+  transform: translateX(200%);
+  animation-name: slide-in-right;
+}
+
+@keyframes slide-in-left {
+  0% { transform: translateX(-200%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes slide-in-right {
+  0% { transform: translateX(200%); }
+  100% { transform: translateX(0); }
+}
+
+#projets {
+  background-color: #FDF1F6;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+#formations {
+  background-color: #ECFBFE;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+#experiences {
+  background-color: #FFF8EC;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+
+@media (max-width:767px){
+  main {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  h2 img {
+    width: 32px;
+    height: 32px;
+  }
+
+  header {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+  }
+
+  .baseline {
+    font-size: 20px;
+    margin: 0;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .nom {
+    font-size: 35px;
+    text-align: center;
+  }
+
+  .right-section {
+    order: -1;
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+
+  .left-section {
+    display: flex;
+    flex-direction: column;
+    background-color: #F8F5FF;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .img-profile {
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  #contact {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (hover: none) {
+  footer .contact-actions a:active img {
+    transform: scale(1.05);
+    opacity: 0.95;
+  }
+}
+
+@media (min-width: 768px) {
+  main.layout{
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 24px;
+    width: 92%;
+    margin: 0 auto;
+  }
+
+  .left-section{
+    position: sticky;
+    top: 24px;
+    height: fit-content;
+    border-radius: 12px;
+    padding: 16px;
+    background-color: #F8F5FF;
+  }
+
+  header.site-header{
+    display: flex;
+    justify-content: center;
+    padding: 24px 0 8px;
+  }
+
+  .img-profile{
+    margin-bottom: 0;
+  }
+
+  h2 img{
+    width: 40px;
+    height: 40px;
+  }
+
+  .split-text-container{ 
+    font-size: 3.5rem; 
+    margin-top: 24px;
+    margin-bottom: 16px;
+  }
+
+  .baseline{
+    font-size: 1.1rem;
+    max-width: 75ch;
+  }
+  
+  .right-section{
+    display: grid;
+    gap: 20px;
+  }
+
+  #experiences, #formations, #projets{
+    padding: 24px;
+  }
+
+  #contact{
+    padding: 28px 0;
+  }
+  .contact-actions{
+    gap: 16px;
+  }
+
+  #projets ul, #competences ul, .soft-skills ul, .hobies ul, .langues ul{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 10px 20px;
+    padding-left: 20px; 
+  }
+}
+
+
+@media (min-width: 1200px) {
+  main.layout{
+    grid-template-columns: 360px 1fr;
+    gap: 32px;
+    width: min(1200px, 95%);
+  }
+
+  .split-text-container{ 
+    font-size: 4.5rem; 
+  }
+
+  .baseline{
+    font-size: 1.25rem;
+    max-width: 80ch;
+  }
+
+  .left-section{
+    padding: 20px;
+    border-radius: 14px;
+    background-color: #F8F5FF;
+  }
+
+  #experiences, #formations, #projets{
+    padding: 32px;
+    border-radius: 10px;
+  }
+
+  #competences ul{
+    grid-template-columns: repeat(3, minmax(0,1fr));
+  }
+}
+
